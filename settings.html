@@ -4,12 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/settings.css"> 
     <script src="./js/settings.js"></script>
-    <!-- <script src="./js/auth.js"></script> -->
 
 </head>
 <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="home.html">HobbyHub</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">
+                                <i class="fas fa-home fa-3x"></i>
+                                <div>Home</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">
+                                <i class="fas fa-user fa-3x"></i>
+                                <div>Profile</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="post.html">
+                                <i class="fas fa-pen fa-3x"></i>
+                                <div>Posts</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="messages.html">
+                                <i class="fas fa-comment fa-3x"></i>
+                                <div>Messages</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications.html">
+                                <i class="fas fa-bell fa-3x"></i>
+                                <div>Notifications</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="settings.html">
+                                <i class="fas fa-cogs fa-3x"></i>
+                                <div>Settings</div>
+                            </a>
+                        </li>
+                        <!-- Settings Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cogs fa-3x"></i>
+                                <div>Settings</div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                                <a class="dropdown-item" href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
+                                <a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
     <div class="settings-container">
         <h1>Settings</h1>
 
@@ -26,22 +88,6 @@
                 Receive notifications
             </label>
         </div>
-
-        <!-- Account Settings Section -->
-        <!-- <div class="settings-section" id="accountSettings">
-            <h2>Account</h2>
-            <label for="username">Username</label>
-            <input type="text" id="username" value="currentUser">  
-
-            <br>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" value="user@example.com"> 
-
-            <br>
-
-            <button id="saveAccountSettings">Save Changes</button>
-        </div> -->
 
         <!-- Logout Section -->
         <div class="settings-section" id="logoutSection">

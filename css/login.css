@@ -23,14 +23,14 @@ body {
 .hobbyhub-name {
     font-size: 4rem;
     font-weight: bold;
-    color: #000;
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
 /* Slogan Style */
 .slogan {
     font-size: 1.2rem;
-    color: #000;
+    color: #333;
     font-weight: 400;
 }
 
@@ -61,18 +61,34 @@ body {
 }
 
 .btn-pinterest {
-    background-color: #e60023;
-    border-color: #e60023;
+    color: white;
+    background-color: grey;
+    border-color:black;
 }
 
 .btn-pinterest:hover {
-    background-color: #b7001f;
+    background-color: darkgray;
 }
 
 .btn-danger {
-    background-color: rgb(7, 166, 240);
-    border-color: darkblue;
+    background-color:grey;
+    border-color: black;
 }
+
+.btn-danger:hover {
+    background-color: darkgray;
+}
+
+.btn-facebook {
+    color: white;
+    background-color:grey;
+    border-color: black;
+}
+
+.btn-facebook:hover {
+    background-color: darkgray;
+}
+
 /* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
     .login-form {

@@ -9,8 +9,6 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    padding-top: 56px;
-    /* To account for fixed navbar */
 }
 
 h1,
@@ -20,20 +18,6 @@ h3 {
 }
 
 /* Navbar Styling */
-
-.footer-icon {
-    text-align: center;
-    margin: 0 20px;
-}
-
-.footer-icon i {
-    font-size: 2rem;
-}
-
-.footer-icon div {
-    font-size: 0.8rem;
-    margin-top: 8px;
-}
 
 .navbar-nav .nav-item {
     padding: 0 20px;
@@ -48,10 +32,42 @@ h3 {
 }
 
 .nav-link {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     margin-right: 20px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: white;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center; 
+    padding: 15px 0; 
+    position: fixed; /* Fix the footer at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 9999; /* Ensure it stays above other content */
+}
+
+#footer p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
