@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HobbyHub - Login</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Left Side: HobbyHub Name and Slogan -->
+            <div class="col-md-6 d-flex flex-column align-items-start justify-content-center p-5 fixed-left">
+                <h1 class="hobbyhub-name">HobbyHub</h1>
+                <p class="slogan">Explore Your Craft, Join the Community</p>
+            </div>
+
+            <!-- Right Side: Login Form -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+                <div class="login-form p-4 rounded ">
+                    <h2 class="text-center mb-4">Welcome</h2>
+                    <main>
+                        <div class="form-group">
+                        <label><span>Username/Email</span>
+                            <input id="username" type="email" placeholder="Enter your Username or Email" required>
+                        </label>
+                        <label><span>Password</span>
+                            <input id="password" type="password" placeholder="Enter your password" required>
+                        </label>
+                        <button id="loginButton" class="btn btn-primary btn-block">Login</button>
+                        <div id="output"></div>
+                    </div>
+                    </main>
+                    <!-- Social Login Buttons -->
+                    <div class="text-center mt-4">
+                        <button class="btn btn-danger btn-block mb-2">
+                            <i class="fab fa-google"></i> Login with Google
+                        </button>
+                        <button class="btn btn-primary btn-block mb-2">
+                            <i class="fab fa-facebook-f"></i> Login with Facebook
+                        </button>
+                        <button class="btn btn-pinterest btn-block mb-2">
+                            <i class="fab fa-pinterest"></i> Login with Pinterest
+                        </button>
+                    </div>
+
+                    <!-- Sign Up Link -->
+                    <div class="text-center mt-4">
+                        <p>Don't have an account? <a href="register.html" class="text-primary">Create one here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

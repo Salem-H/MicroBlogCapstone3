@@ -1,0 +1,57 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding-top: 56px;
+    /* To account for fixed navbar */
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+/* Navbar Styling */
+
+.footer-icon {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.footer-icon i {
+    font-size: 2rem;
+}
+
+.footer-icon div {
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+.navbar-nav .nav-item {
+    padding: 0 20px;
+}
+
+.navbar-nav .nav-link {
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}

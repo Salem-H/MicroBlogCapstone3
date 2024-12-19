@@ -1,0 +1,89 @@
+
+body {
+    margin: 5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Left Section - HobbyHub Name and Slogan */
+.fixed-left {
+    /* position: fixed; */
+    top: 8rem;
+    left:12rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 100px;
+    background-color: transparent;
+}
+
+/* HobbyHub Name Style */
+.hobbyhub-name {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+/* Slogan Style */
+.slogan {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 400;
+}
+
+/* Right Section - Login Form */
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* Login Form Styles */
+.login-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Social Login Buttons */
+.btn-block {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-pinterest {
+    background-color: #e60023;
+    border-color: #e60023;
+}
+
+.btn-pinterest:hover {
+    background-color: #b7001f;
+}
+
+.btn-danger {
+    background-color: rgb(7, 166, 240);
+    border-color: darkblue;
+}
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+    .login-form {
+        width: 90%;
+    }
+
+    .hobbyhub-name {
+        font-size: 3rem;
+    }
+
+    .slogan {
+        font-size: 1rem;
+    }
+}
