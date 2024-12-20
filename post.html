@@ -14,6 +14,7 @@
     <script src="./js/main.js"></script>
     <script src="./js/post.js"></script>
     <script src="./js/settings.js"></script>
+    <!-- <script src="./js/auth.js" defer></script> -->
 </head>
 <body>
         <!-- Navbar -->
@@ -72,7 +73,11 @@
                 </div>
             </div>
         </nav>
-    
+        <script>
+            protectPage();  // If not logged in, this will redirect to login.html
+            // Page content goes here
+            document.getElementById('profile-name').innerText = localStorage.username;
+        </script>
     <div class="container2">
         <h1>Create a New Post</h1>
         <textarea id="textInput" rows="5" placeholder="What's on your mind?" required></textarea>

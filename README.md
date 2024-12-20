@@ -94,6 +94,30 @@ Once you have the application running locally, you can interact with it by:
 5. **Profile Management**: Update your personal information and view your posts.
 
 ---
+## Interesting Code: DELETE POST
+```javascript 
+
+async function deleteLike(likeId){
+    const response = await fetch(
+        BASE_URL + "/api/likes/" + likeId, { 
+        method: "DELETE", 
+        headers: headersWithAuth(),
+    });
+    const object = await response.json();
+    return object;
+}
+
+
+   if (localStorage.username === m.username) {
+    deleteButton.addEventListener("click", async () => {
+        await deletePost(m._id);
+        window.location.reload(); // Refresh page
+    });
+    deleteButton.innerText = "Delete";
+  } else {
+    deleteButton.style.display = "none"; // Hide the delete button if the user is not the author
+  }
+```
 
 ## File Structure
 
@@ -104,21 +128,36 @@ Here’s an overview of the project structure:
 ### Landing Page/ Login Page
 ![HobbyHub LandingPage](./img/pages/LandinPage.jpg)
 
+### Register Page/ SignUp Page
+![HobbyHub RegisterPage](./img/pages/RegisterPage.jpg)
+
+### Home Page
+![HobbyHub HoemPage](./img/pages/HomePage.jpg)
+
+### Post Page
+![HobbyHub PostPage](./img/pages/PostPage.jpg)
+
+### Messages Page
+![HobbyHub MessagesPage](./img/pages/MessagePage.jpg)
+
+### Profile Page
+![HobbyHub ProfilePage](./img/pages/ProfilePage.jpg)
+
+### Settings Page
+![HobbyHub SettingsPage](./img/pages/SettingPage.jpg)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Authors
+## Author
 
 - **Salem Hailemariam** - [https://github.com/Salem-H]
 
 ## Acknowledgements
 
-- My instructor Kevin E Long for the support throuhout this project.
-- **National Park Service** for providing open data on parks.
-- **sunrise-sunset.org** used to fetch the sunset and sunrise time.
+- To my instructor Kevin E Long for the support throuhout this project.
 - **cdnjs.cloudflare.com** for the social media icons.
-- **MDN Web Docs** for form/enctype to upload picture
 
 ## Contact
 

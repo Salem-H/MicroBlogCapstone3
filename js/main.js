@@ -2,7 +2,7 @@
 const BASE_URL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
 const NO_AUTH_HEADERS = { 'accept': 'application/json', 'Content-Type': 'application/json' };
-
+// Signup
 async function signUp(username, fullName, password) {
     const payload = JSON.stringify(
         { "username": username, "fullName": fullName, "password": password }
@@ -22,8 +22,7 @@ async function signUp(username, fullName, password) {
     const object = await response.json(); //COnvert body to object
     return object;
 }
-
-
+// Login
 async function login(username, password) {
     const payload = JSON.stringify({ "username": username, "password": password });
     const response = await fetch(BASE_URL + "/auth/login", {
@@ -41,8 +40,8 @@ async function login(username, password) {
     localStorage.token = object.token;
     localStorage.username = object.username;
     return object;
+    
 }
-
 // ALL THE OTHERS NEED A TOKEN IN THE HEADER
 function headersWithAuth() {
     //SAME AS NO AUTH BUT WITH AUTH ADDED
@@ -65,7 +64,6 @@ async function getMessageList() {
     const object = await response.json();
     return object;
 }
-
 async function sendText(text){
     const response = await fetch(
         BASE_URL + "/api/posts", { // endpoint for messages/posts
@@ -76,7 +74,7 @@ async function sendText(text){
     const object = await response.json();
     return object;
 }
-
+// Like a post
 async function sendLike(postId){
     const response = await fetch(
         BASE_URL + "/api/likes", { // endpoint for likes
@@ -87,6 +85,7 @@ async function sendLike(postId){
     const object = await response.json();
     return object;
 }
+// Unlike a post
 async function deleteLike(likeId){
     const response = await fetch(
         BASE_URL + "/api/likes/" + likeId, { // endpoint for likes
@@ -96,7 +95,23 @@ async function deleteLike(likeId){
     const object = await response.json();
     return object;
 }
-
+// Delete a post by ID
+async function deletePost(postId) {
+    const response = await fetch(
+      BASE_URL + "/api/posts/" + postId, { // endpoint for posts
+      method: "DELETE", //DELETE method
+      headers: headersWithAuth(),
+    });
+  
+    if (response.ok) {
+      return response.json(); // Return success data if needed
+    } else {
+      const error = await response.json();
+      console.error('Error deleting post:', error);
+      throw new Error('Failed to delete post');
+    }
+  }
+// Update Profile  
 async function getProfile() {
     const response = await fetch(
         BASE_URL + "/api/users/" + localStorage.username, {
@@ -106,8 +121,6 @@ async function getProfile() {
     const object = await response.json();
     return object;
 }
-
-
 async function saveProfile(payload){
     const response = await fetch(
         BASE_URL + "/api/users/" + localStorage.username, { // endpoint for messages/posts

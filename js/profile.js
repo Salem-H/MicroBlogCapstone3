@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     passwordInput.value = "password";
 
     saveUserProfile.addEventListener("click", async () => {
-        //TODO SAVE
         const payload = {
             fullName: fullName.value,
             bio: bioText.value
@@ -18,4 +17,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         await saveProfile(payload);
         window.location.href = "messages.html"
     })
-});//end loaded
+});

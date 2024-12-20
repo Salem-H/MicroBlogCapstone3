@@ -58,16 +58,20 @@ function getMessage(m) {
     }
   });
 
-  deleteButton.addEventListener("click", async () => {
-    // Handle delete post functionality
-    await deletePost(m._id);
-    window.location.reload(); // Refresh page
-  });
+   // Add Delete button if the current user is the post's author
+   if (localStorage.username === m.username) {
+    deleteButton.addEventListener("click", async () => {
+        await deletePost(m._id);
+        window.location.reload(); // Refresh page
+    });
+    deleteButton.innerText = "Delete";
+  } else {
+    deleteButton.style.display = "none"; // Hide the delete button if the user is not the author
+  }
 
   // Check if the user already liked the post
   const likeText = m.likes.find(like => like.username === localStorage.username) ? "Unlike" : "Like";
   likeButton.innerText = likeText;
-  deleteButton.innerText = "Delete";
 
   // Create a div for the buttons and add the buttons inside
   const buttonsDiv = document.createElement("div");

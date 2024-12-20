@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             output.innerText = "Username already taken.";
             return;
         }
-        //SUCCESS
         window.location.href = "index.html";
-    });//end click
-}); //end loaded
+    });
+});
