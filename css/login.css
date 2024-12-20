@@ -4,6 +4,31 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+/* Form labels and inputs */
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #555;
+    text-align: center;
+}
+
+input[type="email"], input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #42a5f5;
+    outline: none;
+}
+
 /* Left Section - HobbyHub Name and Slogan */
 .fixed-left {
     /* position: fixed; */
@@ -48,12 +73,6 @@ body {
     max-width: 400px;
 }
 
-.login-form h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #333;
-}
-
 /* Social Login Buttons */
 .btn-block {
     width: 100%;
@@ -87,19 +106,4 @@ body {
 
 .btn-facebook:hover {
     background-color: darkgray;
-}
-
-/* Responsive Layout for Small Screens */
-@media (max-width: 768px) {
-    .login-form {
-        width: 90%;
-    }
-
-    .hobbyhub-name {
-        font-size: 3rem;
-    }
-
-    .slogan {
-        font-size: 1rem;
-    }
 }

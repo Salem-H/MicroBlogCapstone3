@@ -1,8 +1,8 @@
-// Gravatar Hashing Function
+// Gravatar Hashing Function 
 function getGravatarUrl(email, size = 100) {
   const hashedEmail = CryptoJS.SHA256(email.trim().toLowerCase()).toString(CryptoJS.enc.Hex);
   return `https://www.gravatar.com/avatar/${hashedEmail}?s=${size}`;
-};
+}
 
 // Format the date for readability
 function formatDate(dateString) {
@@ -26,37 +26,58 @@ function getMessage(m) {
   e.dataset.post_id = m._id;
   
   // Create Gravatar image
-
-  // const userGravatarUrl = getGravatarUrl(m.email);
-  // const avatar = `<img src="${userGravatarUrl}" alt="${m.username}'s Avatar" class="avatar">`;
   const gravatarUrl = getGravatarUrl(m.username, 150);
 
   e.innerHTML = `
-    <img scr="${gravatarUrl}"/> 
-    FROM:  <b>${m.username}</b><br>\n    
-    WHEN:  <b>${formatDate(m.createdAt)}</b>\n    
-    TEXT:  <b>${m.text}<br></b>\n
-    LIKES: <b>${m.likes.length}</b>
+    <div class="message-header">
+      <img src="${gravatarUrl}" alt="${m.username}'s Avatar" class="avatar" />
+      <div class="from-info">
+        <strong>FROM:</strong> ${m.username}
+      </div>
+    </div>
+    <div><strong>WHEN:</strong> ${formatDate(m.createdAt)}</div>
+    <div><strong>TEXT:</strong> ${m.text}</div>
+    <div><strong>LIKES:</strong> ${m.likes.length}</div>
   `;
 
-  const b = document.createElement("button");
-  b.addEventListener("click", async () => {
+  // Create Like/Unlike and Delete buttons
+  const likeButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
+
+  likeButton.addEventListener("click", async () => {
     // Handle like/unlike functionality
     const like = m.likes.find(like => like.username === localStorage.username);
     if (like !== undefined) {
       // Unliking the post
       await deleteLike(like._id);
-      window.location.href = 'messages.html'; // Refresh page
+      window.location.reload(); // Refresh page
     } else {
       // Liking the post
       await sendLike(m._id);
-      window.location.href = 'messages.html'; // Refresh page
+      window.location.reload(); // Refresh page
     }
   });
 
-  const like = m.likes.find(like => like.username === localStorage.username);
-  b.innerText = like !== undefined ? "UnLike" : "Like";
-  e.appendChild(b);
+  deleteButton.addEventListener("click", async () => {
+    // Handle delete post functionality
+    await deletePost(m._id);
+    window.location.reload(); // Refresh page
+  });
+
+  // Check if the user already liked the post
+  const likeText = m.likes.find(like => like.username === localStorage.username) ? "Unlike" : "Like";
+  likeButton.innerText = likeText;
+  deleteButton.innerText = "Delete";
+
+  // Create a div for the buttons and add the buttons inside
+  const buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("buttons");
+  buttonsDiv.appendChild(likeButton);
+  buttonsDiv.appendChild(deleteButton);
+
+  // Append the buttons container to the message
+  e.appendChild(buttonsDiv);
+
   return e;
 }
 
@@ -64,14 +85,11 @@ function getMessage(m) {
 function sortPosts(posts, sortBy) {
   switch (sortBy) {
       case 'recent':
-          // Sort by createdAt (most recent first)
-          return posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+          return posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Most recent first
       case 'author':
-          // Sort alphabetically by username
-          return posts.sort((a, b) => a.username.localeCompare(b.username));
+          return posts.sort((a, b) => a.username.localeCompare(b.username)); // Sort alphabetically by username
       case 'popularity':
-          // Sort by number of likes (most liked first)
-          return posts.sort((a, b) => b.likes.length - a.likes.length);
+          return posts.sort((a, b) => b.likes.length - a.likes.length); // Most liked first
       default:
           return posts;
   }
@@ -79,12 +97,25 @@ function sortPosts(posts, sortBy) {
 
 // Fetch posts and display them
 document.addEventListener("DOMContentLoaded", async () => {
-  const messages = await getMessageList();  
-  const sortBy = 'recent'; 
+  const messages = await getMessageList();
   
+  // Listen for changes in the sort options
+  const sortOptions = document.getElementById("sort-options");
+  sortOptions.addEventListener("change", async (event) => {
+    const sortBy = event.target.value;
+    const sortedMessages = sortPosts(messages, sortBy);
+    displayMessages(sortedMessages);
+  });
+
+  // Initially sort by recent posts
+  const sortBy = 'recent';
   const sortedMessages = sortPosts(messages, sortBy);
-  
-  // Append sorted messages to the page
-  const output = document.getElementById('output');
-  sortedMessages.forEach(m => output.appendChild(getMessage(m)));
+  displayMessages(sortedMessages);
 });
+
+// Display messages on the page
+function displayMessages(messages) {
+  const output = document.getElementById('output');
+  output.innerHTML = ''; // Clear previous messages
+  messages.forEach(m => output.appendChild(getMessage(m)));
+}

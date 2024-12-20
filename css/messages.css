@@ -3,20 +3,14 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fa;
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
-h3{
-    text-align: center;
-    
-}
 /* Output section (Grid Layout for Messages) */
 #output {
     margin-top: 20px;
     display: grid; /* Use CSS Grid */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates responsive columns */
-    gap: 20px; /* Adds space between the columns */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 50px; /* Adds space between the columns */
 }
 
 /* Message card styling */
@@ -27,11 +21,33 @@ h3{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-left: 5px solid rgb(42, 150, 201);
     transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .message:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Avatar image styling */
+.message img.avatar {
+    width: 150px; /* Increased size */
+    height: 150px; /* Increased size */
+    border-radius: 50%;
+    margin-right: 10px; /* Space between avatar and text */
+}
+
+/* Message header styling */
+.message-header {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    margin-bottom: 10px; /* Space between header and the rest */
+}
+
+.from-info {
+    font-weight: bold;
+    color: #333;
 }
 
 /* Message text styling */
@@ -61,6 +77,29 @@ h3{
     font-size: 0.9rem;
 }
 
+/* Button styling */
+button {
+    padding: 8px 12px;
+    font-size: 0.9rem; /* Smaller font size */
+    background-color: rgb(42, 150, 201);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(7, 85, 230);
+}
+
+/* Align like and delete buttons in a row */
+.message .buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Space between buttons */
+}
+
 /* New Post Button Positioning */
 .new-post-btn-container {
     position: fixed; /* Fixes the button to the page */
@@ -84,25 +123,4 @@ h3{
 
 .new-post-btn:hover {
     background-color: darkblue;
-}
-
-/* Responsive styling for mobile */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    .message {
-        padding: 12px;
-        margin: 10px 0;
-    }
-
-    /* Stack the messages into a single column for mobile */
-    #output {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
 }

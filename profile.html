@@ -8,15 +8,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/profile.css">
     <script src="./js/main.js" defer></script>
     <script src="./js/profile.js" defer></script>
+    <script src="./settings.html"></script>
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,15 +35,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">
-                            <i class="fas fa-user fa-3x"></i>
-                            <div>Profile</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="post.html">
                             <i class="fas fa-pen fa-3x"></i>
-                            <div>Posts</div>
+                            <div>Post</div>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -53,12 +47,17 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user fa-3x"></i>
+                            <div>Profile</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="notifications.html">
                             <i class="fas fa-bell fa-3x"></i>
                             <div>Notifications</div>
                         </a>
                     </li>
-
                     <!-- Settings Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -67,8 +66,9 @@
                             <div>Settings</div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-                            <a class="dropdown-item" href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
+                            <a class="dropdown-item" href="settings.html"><i class="fas fa-cogs"></i> Privacy</a>
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a class="dropdown-item" href="register.html"><i class="fas fa-user-plus"></i> Signup</a>
                             <a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i>
                                 Logout</a>
                         </div>
@@ -77,15 +77,10 @@
             </div>
         </div>
     </nav>
-
-    <header>
-        <div class="container">
-            <h1>Edit User Profile - <span id="username">?</span></h1>
-        </div>
-    </header>
     <main>
-        <div class="container">
+        <div class="container2">
             <form id="profileForm">
+                <h1>Edit User Profile - <span id="username">?</span></h1>
                 <div class="form-group">
                     <label for="fullName">
                         <span>Full Name:</span>
@@ -95,7 +90,7 @@
                 <div class="form-group">
                     <label for="bioText">
                         <span>Biography:</span>
-                        <textarea id="bioText" placeholder="Tell us about yourself..."></textarea>
+                        <textarea id="bioText"  placeholder="Tell us about yourself..."></textarea>
                     </label>
                 </div>
                 <div class="form-group">
@@ -115,5 +110,9 @@
         </div>
     </main>
 </body>
-
+<footer>
+    <div id="footer">
+        <p>&copy; 2024 HobbyHub. All Rights Reserved.</p>
+    </div>
+</footer>
 </html>

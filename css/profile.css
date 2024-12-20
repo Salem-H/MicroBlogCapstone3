@@ -3,12 +3,9 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f6f9;
     color: #333;
-    padding-top: 20px;
 }
 
-#editProfile{
-padding-top: 1rem;}
-.container {
+.container2 {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -17,15 +14,9 @@ padding-top: 1rem;}
 
 /* Header Styles */
 header {
-    background-color: #333;
     padding: 20px 0;
     text-align: center;
-    color: white;
-}
-
-header h1 {
-    font-size: 24px;
-    font-weight: bold;
+    color: #333;
 }
 
 /* Form Styles */
@@ -58,51 +49,21 @@ form textarea {
     font-size: 14px;
 }
 
-form input[type="text"]:focus,
-form input[type="password"]:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #333;
-}
-
 form textarea {
-    height: 150px;
+    height: 100px;
     resize: vertical;
 }
 
-button {
+#saveUserProfile{
     width: 100%;
-    padding: 15px;
-    background-color:rgb(42, 150, 201) ;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: rgb(42, 150, 201);
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 8px; 
 }
 
-button:hover {
-    background-color: darkblue;
-}
-
-button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-}
-
-/* Input Focus */
-input:focus, textarea:focus {
-    outline: none;
-    border: 2px solid #333;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 20px;
-    }
-    form {
-        padding: 20px;
-    }
+#saveUserProfile:hover {
+    background-color: rgb(7, 85, 230);
 }

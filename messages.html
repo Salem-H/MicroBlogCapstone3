@@ -13,11 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
     <script src="./js/main.js"></script>
     <script src="./js/message.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>    <!-- <script src="./js/auth.js"></script> -->
-
+    <script src="./js/settings.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> 
 </head>
 <body>
     <!-- Navbar -->
@@ -36,12 +36,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">
-                            <i class="fas fa-user fa-3x"></i>
-                            <div>Profile</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="post.html">
                             <i class="fas fa-pen fa-3x"></i>
                             <div>Posts</div>
@@ -54,12 +48,17 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user fa-3x"></i>
+                            <div>Profile</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="notifications.html">
                             <i class="fas fa-bell fa-3x"></i>
                             <div>Notifications</div>
                         </a>
                     </li>
-
                     <!-- Settings Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,8 +66,9 @@
                             <div>Settings</div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-                            <a class="dropdown-item" href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
+                            <a class="dropdown-item" href="settings.html"><i class="fas fa-cogs"></i> Privacy</a>
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a class="dropdown-item" href="register.html"><i class="fas fa-user-plus"></i> Signup</a>
                             <a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a>
                         </div>
                     </li>
@@ -76,13 +76,9 @@
             </div>
         </div>
     </nav>
-
-
-
 <!-- Messages Content -->
 <div class="container mt-5 pt-5"> 
-    <h3>Messages</h3>
-    
+    <h1>Messages</h1>
     <!-- Sorting Dropdown -->
     <div>
         <label for="sort-options">Sort by:</label>
@@ -92,19 +88,12 @@
             <option value="popularity">Popularity</option>
         </select>
     </div>
-
     <!-- Messages will appear here -->
     <div id="output"></div>
 </div>
-
 <!-- New Post Button in Top-Right Corner -->
 <a href="post.html" class="new-post-btn-container">
     <button class="new-post-btn">New Post</button>
 </a>
-
-    <!-- Footer -->
-    <!-- Include Footer code here -->
-
 </body>
-
 </html>
