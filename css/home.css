@@ -11,8 +11,6 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
 }
-
-/* Individual Item Sizes (Responsive Design) */
 .masonry-item {
     position: relative;
     overflow: hidden;
@@ -20,13 +18,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .masonry-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
-
 .masonry-item .caption {
     position: absolute;
     bottom: 10px;
@@ -38,20 +34,15 @@ body {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-
-/* Different sizes for items */
 .masonry-item.small {
     height: 200px;
 }
-
 .masonry-item.medium {
     height: 300px;
 }
-
 .masonry-item.large {
     height: 400px;
 }
-
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     .masonry-item {
