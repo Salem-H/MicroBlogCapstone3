@@ -35,7 +35,7 @@ function getMessage(m) {
         <strong>FROM:</strong> ${m.username}
       </div>
     </div>
-    <div><strong>WHEN:</strong> ${formatDate(m.createdAt)}</div>
+    <div><strong>AT:</strong> ${formatDate(m.createdAt)}</div>
     <div><strong>TEXT:</strong> ${m.text}</div>
     <div><strong>LIKES:</strong> ${m.likes.length}</div>
   `;
